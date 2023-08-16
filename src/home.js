@@ -12,7 +12,7 @@ export default function Home() {
     let submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:4000/", {
+            const response = await axios.post("vocal-elf-4cdcaf.netlify.app/", {
                 msg
             });
             setServerResponse(response.data);
