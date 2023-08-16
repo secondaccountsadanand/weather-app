@@ -23,7 +23,7 @@ app.post('/', async (req, res) => {
     
 });
 
-if(process.env.NODE_ENV == 'production'){
+if(process.env.NODE_ENV=='production'){
     const path = require('path')
     app.use(express.static(path.resolve(__dirname,'build')))
     app.get('/',(req,res)=>{
