@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const axios = require('axios')
-const path = require('path')
 require('dotenv').config()
 const app = express()
 
@@ -24,6 +23,13 @@ app.post('/', async (req, res) => {
     
 });
 
+if(process.env.NODE_ENV == 'production'){
+    const path = require('path')
+    app.use(express.static(path.resolve(__dirname,'build')))
+    app.get('/',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'build','index.html'))
+    })
+}
 
 app.listen(process.env.PORT || 4000, ()=>{
     console.log('started')
