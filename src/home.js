@@ -12,7 +12,7 @@ export default function Home() {
     let submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${process.env.url}`, {
+            const response = await axios.post('http://localhost:4000/', {
                 msg
             });
             setServerResponse(response.data);
