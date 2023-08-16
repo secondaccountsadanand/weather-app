@@ -10,9 +10,7 @@ app.use(cors())
 
 var value =''
 
-app.get('/' ,(req,res)=>{
 
-})
 
 app.post('/', async (req, res) => {
     const { msg } = req.body;
